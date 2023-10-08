@@ -19,7 +19,9 @@ interface IProps {
 const ProductCard = (props: IProps) => {
     return <div className={styles.cardContainer}>
         <div className={styles.cardTop}>
-            <div className="text-center mb-2" style={{fontSize:"14px"}}><a className={styles.link} href={"https://fakestoreapi.com/docs"}>TAP TO VIEW DETAILS</a></div>
+            <div className="text-center mb-2" style={{fontSize: "14px"}}><a className={styles.link}
+                                                                            href={"https://fakestoreapi.com/docs"}>TAP
+                TO VIEW DETAILS</a></div>
             <div className={styles.imageWrapper}>
                 <img className={`w-100 ${styles.productImage}`}
                      src={props.image}
@@ -29,24 +31,25 @@ const ProductCard = (props: IProps) => {
                 </div>
 
             </div>
-            <h2 className={styles.productName}>{props.title}</h2>
-            <p className={`text-truncate ${styles.description}`}>
-                {props.description}
-            </p>
+            <div className={styles.pNameContainer}><h2 className={styles.productName}>{props.title}</h2></div>
+            <div className={styles.descriptionContainer}>
+                <p className={`${styles.description}`}>
+                    {props.description}
+                </p>
+            </div>
             <div className="text-end">
                 <h1 className={styles.price}>$ {props.priceInUsd}</h1>
             </div>
         </div>
         <Container fluid>
             <Row>
-                <Col className="p-0" lg={4}><CartQtyButton/></Col>
-                <Col className="p-0" lg={8}><AddToCartButton/></Col>
+                <Col className="p-0" xs={4}><CartQtyButton/></Col>
+                <Col className="p-0" xs={8}><AddToCartButton/></Col>
             </Row>
         </Container>
 
     </div>
 }
-
 
 
 export default ProductCard;

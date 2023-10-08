@@ -4,8 +4,8 @@
 
 .cardTop {
     background-color: #fac7b6;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
     padding: 10px 30px;
     /*height: 80%;*/
 }
@@ -17,7 +17,7 @@
 }
 
 .productImage {
-    border-radius: 20px;
+    border-radius: 30px;
     height: 100%;
 
 }

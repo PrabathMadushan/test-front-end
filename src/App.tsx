@@ -3,6 +3,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import ProductCard from "./components/productCard/ProductCard";
 import {useQuery} from "@tanstack/react-query";
 import {MagnifyingGlass} from 'react-loader-spinner'
+import {TbFaceIdError} from 'react-icons/tb'
 
 interface ResponseDTO {
     id: number,
@@ -32,10 +33,17 @@ function App() {
         },
 
     })
+    if (error) return <div className="background">
+        <div className="text-center">
+            <div><TbFaceIdError style={{fontSize: "46px"}}/></div>
+            <div>An error has occurred</div>
+        </div>
+
+    </div>
     return <div className="App">
 
-        <Container fluid>
-            {isLoading ? <div className="loading">
+        <Container fluid className="p-0">
+            {isLoading ? <div className="background">
                 <MagnifyingGlass
                     visible={true}
                     height="80"
@@ -47,18 +55,19 @@ function App() {
                     color='#e15b64'
                 />
             </div> : <Row>
-                {data && data.map((product, index) => <Col className="py-2" lg={3}>
-                    <ProductCard
-                        key={index}
-                        image={product.image}
-                        title={product.title}
-                        description={product.description}
-                        priceInUsd={product.priceInUsd}
-                    /></Col>)}
+                {data && data.map((product, index) =>
+                    <Col className="py-2" md={6} lg={3}>
+                        <ProductCard
+                            key={index}
+                            image={product.image}
+                            title={product.title}
+                            description={product.description}
+                            priceInUsd={product.priceInUsd}
+                        /></Col>)}
 
             </Row>}
-
         </Container>
+
 
     </div>;
 }

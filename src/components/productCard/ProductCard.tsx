@@ -1,6 +1,5 @@
 import styles from "./ProductCard.module.css"
-import {BsSuitHeart, BsCart2} from 'react-icons/bs'
-import {HiMinusSm, HiPlusSm} from 'react-icons/hi'
+import {BsSuitHeart} from 'react-icons/bs'
 import React from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import CartQtyButton from "../AddToCartButton/CartQtyButton";

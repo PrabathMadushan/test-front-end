@@ -1,0 +1,13 @@
+.addToCartButton {
+    background: rgb(239, 57, 147);
+    background: linear-gradient(0deg, rgba(239, 57, 147, 1) 10%, rgba(255, 255, 255, 1) 100%);
+    font-size: 22px;
+    padding: 10px 30px;
+    text-align: center;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

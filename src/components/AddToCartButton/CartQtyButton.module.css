@@ -1,0 +1,27 @@
+.cartQtyButton {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #fac7b6;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.btn {
+    font-size: 22px;
+    font-weight: bolder;
+    color: #f8acb1;
+}
+
+.value {
+    font-size: 22px;
+    color: #2f3191;
+    font-weight: bolder;
+}
+
+.des {
+    font-size: 12px;
+    color: #2f3191;
+    font-weight: bolder;
+
+}

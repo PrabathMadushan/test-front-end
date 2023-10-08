@@ -1,8 +1,10 @@
-import styles from "./card.module.css"
+import styles from "./ProductCard.module.css"
 import {BsSuitHeart, BsCart2} from 'react-icons/bs'
 import {HiMinusSm, HiPlusSm} from 'react-icons/hi'
 import React from "react";
 import {Col, Container, Row} from "react-bootstrap";
+import CartQtyButton from "../AddToCartButton/CartQtyButton";
+import AddToCartButton from "../CartQtyButton/AddToCartButton";
 
 interface IProps {
     image: string;
@@ -42,22 +44,6 @@ const ProductCard = (props: IProps) => {
     </div>
 }
 
-const AddToCartButton = () => {
-    return <div className={styles.addToCartButton}>
-        <BsCart2/>
-        <div className="ps-2">Add to cart</div>
-    </div>
-}
 
-const CartQtyButton = () => {
-    return <div className={styles.cartQtyButton}>
-        <div className={styles.btn}><HiMinusSm/></div>
-        <div>
-            <div className={styles.value}>1</div>
-            <div className={styles.des}>Nos</div>
-        </div>
-        <div className={styles.btn}><HiPlusSm/></div>
-    </div>
-}
 
 export default ProductCard;

@@ -11,7 +11,7 @@ interface Product {
 }
 
 function App() {
-    const [products, setProducts] = useState<Product[]>(
+    const [products] = useState<Product[]>(
         [
             {
                 image: 'https://www.rudecru.com/eu/27680-large_default/premium-t-shirt-red.jpg',
@@ -66,8 +66,10 @@ function App() {
     return <div className="App">
         <Container fluid>
             <Row>
-                {products.map((product, index) => <Col className="py-2" lg={3}><ProductCard
-                    image={product.image}
+                {products.map((product, index) => <Col className="py-2" lg={3}>
+                    <ProductCard
+                    key={index}
+                        image={product.image}
                     title={product.title}
                     description={product.description}
                     priceInUsd={product.priceInUsd}

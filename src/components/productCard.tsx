@@ -14,7 +14,7 @@ interface IProps {
 const ProductCard = (props: IProps) => {
     return <div className={styles.cardContainer}>
         <div className={styles.cardTop}>
-            <a className={styles.link} href={"#"}>TAP TO VIEW DETAILS</a>
+            <a className={styles.link} href={"https://fakestoreapi.com/docs"}>TAP TO VIEW DETAILS</a>
             <div className={styles.imageWrapper}>
                 <img className={`w-100 ${styles.productImage}`}
                      src={props.image}
@@ -32,7 +32,7 @@ const ProductCard = (props: IProps) => {
                 <h1 className={styles.price}>$ {props.priceInUsd}</h1>
             </div>
         </div>
-        <Container>
+        <Container fluid>
             <Row>
                 <Col className="p-0" lg={4}><CartQtyButton/></Col>
                 <Col className="p-0" lg={8}><AddToCartButton/></Col>

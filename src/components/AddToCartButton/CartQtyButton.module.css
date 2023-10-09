@@ -9,9 +9,10 @@
 }
 
 .btn {
-    font-size: 22px;
+    font-size: 36px;
     font-weight: bolder;
     color: #f8acb1;
+    cursor: pointer;
 }
 
 .value {

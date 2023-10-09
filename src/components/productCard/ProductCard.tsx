@@ -1,6 +1,6 @@
 import styles from "./ProductCard.module.css"
 import {BsSuitHeart} from 'react-icons/bs'
-import React from "react";
+import React, {useState} from "react";
 import {Col, Container, Row} from "react-bootstrap";
 import CartQtyButton from "../AddToCartButton/CartQtyButton";
 import AddToCartButton from "../CartQtyButton/AddToCartButton";
@@ -17,6 +17,9 @@ interface IProps {
 // This is a React functional component named ProductCard.
 // It renders a card displaying details of a product.
 const ProductCard = (props: IProps) => {
+
+    const [qnt,setQnt] = useState(1);
+
     return <div className={styles.cardContainer}>
         <div className={styles.cardTop}>
             <div className="text-center mb-2" style={{fontSize: "14px"}}><a className={styles.link}
@@ -43,7 +46,15 @@ const ProductCard = (props: IProps) => {
         </div>
         <Container fluid>
             <Row>
-                <Col className="p-0" xs={4}><CartQtyButton/></Col>
+                <Col className="p-0" xs={4}><CartQtyButton
+                    onIncrease={()=>setQnt(ps=>ps+1)}
+                    onDecrease={()=>{
+                        if(qnt>0){
+                            setQnt(ps=>ps-1)
+                        }
+                    }}
+                    quantity={qnt}
+                /></Col>
                 <Col className="p-0" xs={8}><AddToCartButton/></Col>
             </Row>
         </Container>
